@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Research Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Research Agent</h1>
+        <p>Ask for a topic and get curated search results.</p>
+      </header>
+      <section id="chat-log" class="chat-log" aria-live="polite" aria-label="Conversation"></section>
+      <form id="chat-form" class="chat-form" autocomplete="off">
+        <input
+          id="user-input"
+          class="chat-form__input"
+          type="text"
+          name="message"
+          placeholder="What would you like to research today?"
+          required
+        >
+        <button type="submit" class="chat-form__button">Send</button>
+      </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" integrity="sha384-948ahk4ZmxYVYOc+rxN1H2gM1EJ2Duhp7uHtZ4WSLkV4Vtx5MUqnV+l7u9B+jFv+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js" integrity="sha384-cwS6YdhLI7XS60eoDiC+egV0qHp8zI+Cms46R0nbn8JrmoAzV9uFL60etMZhAnSu" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
